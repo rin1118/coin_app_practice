@@ -19,6 +19,7 @@ class App extends React.Component {
 
   //api에서 코인 정보 받아오기
   getCoins = async () => {
+    console.log("getCoin!");
     const url = "https://api.coinpaprika.com/v1/tickers";
     const { data } = await axios.get(url);
     this.setState({ isLoading: false, coins: data });
@@ -29,7 +30,13 @@ class App extends React.Component {
     this.getCoins();
   }
 
+  componentDidUpdate() {
+    console.log("update");
+    setTimeout(this.getCoins, 3000);
+  }
+
   render() {
+    console.log("render");
     const { isLoading, coins } = this.state;
     return (
       <h4>

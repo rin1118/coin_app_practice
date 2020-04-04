@@ -3,11 +3,13 @@ import PropTypes from "prop-types";
 
 function Coins({ id, name, rank, price }) {
   return (
-    <ul>
-      <li>{name}</li>
-      <li>가격 : {price}</li>
-      <li>{rank}위</li>
-    </ul>
+    <div>
+      <ul>
+        <li>{name}</li>
+        <li>가격 : {price}</li>
+        <li>{rank}위</li>
+      </ul>
+    </div>
   );
 }
 
